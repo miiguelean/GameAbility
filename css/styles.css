@@ -1,0 +1,345 @@
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif; /* Cambio de fuente a una más moderna */
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+}
+
+header {
+    background: #292929;
+    color: #fff;
+    padding: 20px 60px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li :hover{
+    border-bottom: 1px solid #fff;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px 0;
+    text-align: center;
+}
+
+#quienes-somos {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.card-quienes-somos {
+    margin: 0 auto;
+    width: 75%;
+    padding: 20px 0;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+#quienes-somos .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#quienes-somos .texto {
+    width: 45%;
+    padding: 20px;
+}
+
+#quienes-somos .texto h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #fff; /* Texto blanco */
+}
+
+#quienes-somos .texto p {
+    font-size: 1.1em;
+    color: #ccc; /* Texto gris claro */
+    margin-bottom: 20px;
+}
+
+#quienes-somos .imagen {
+    width: 45%;
+}
+
+#quienes-somos .imagen img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+
+
+.btn {
+    background-color: #007bff; /* Botón azul brillante */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el cursor */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.destacados{
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+.producto {
+    margin: 0; /* Elimina el margen entre los productos */
+    max-width: 600px;
+    padding: 20px;
+    background-color: #292929; /* Fondo gris oscuro */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra blanca */
+}
+
+
+.producto img {
+    max-width: 600px;
+    max-height: 600px;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+.producto h3 {
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+.producto p {
+    color: #ccc; /* Texto gris claro */
+}
+
+/* Estilos para el botón "Ver más productos" */
+.btn-ver-mas {
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.btn-ver-mas:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos mejorados para la sección de comunidad */
+#comunidad {
+    padding: 50px 0;
+    text-align: center;
+}
+
+#comunidad h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #fff; /* Texto blanco */
+}
+
+#comunidad .contenedor-seccion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#comunidad .contenedor-seccion > div {
+    flex-basis: calc(33.33% - 40px); /* Ajuste del tamaño de las tarjetas */
+    margin: 20px;
+    padding: 30px;
+    background-color: #1f1f1f; /* Fondo gris oscuro */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Sombra blanca */
+    transition: all 0.3s ease;
+}
+
+#comunidad .contenedor-seccion > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3); /* Sombra más pronunciada */
+}
+
+#comunidad img{
+    width: 300px;
+    border-radius: 10px;
+}
+
+#comunidad h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #007bff; /* Azul brillante */
+}
+
+#comunidad p {
+    font-size: 1.1em;
+    color: #ccc; /* Texto gris claro */
+    margin-bottom: 20px;
+}
+
+#comunidad .btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+#comunidad .btn:hover {
+    background-color: #0056b3;
+}
+
+#comunidad .cards {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Estilos para las tarjetas */
+.foro, .eventos, .historias {
+    background-color: #292929; /* Fondo gris oscuro */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra blanca */
+    width: 28%; /* Ajuste del ancho de las tarjetas */
+    margin-bottom: 20px; /* Espacio entre tarjetas */
+}
+
+.foro:hover, .eventos:hover, .historias:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Sombra más pronunciada al pasar el cursor */
+}
+
+/*Estilos para section de Contacto*/
+#contacto {
+    padding: 50px 0;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#contacto h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.formulario, .informacion-contacto, .mapa {
+    width: calc(30% - 20px); /* Ajuste del ancho para tener espacio entre las tarjetas */
+}
+
+.card {
+    flex-basis: calc(33.33% - 40px); /* Ajuste del tamaño de las tarjetas */
+    margin: 20px;
+    padding: 30px;
+    background-color: #1f1f1f; /* Fondo gris oscuro */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra blanca */
+    transition: all 0.3s ease;
+    display: flex; /* Usar flexbox para expandir las tarjetas */
+    flex-direction: column; /* Alinear elementos en columna */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Sombra más pronunciada */
+}
+
+.formulario h3, .informacion-contacto h3, .mapa h3 {
+    padding-bottom: 20px;
+}
+
+.formulario form {
+    text-align: left;
+}
+
+.formulario label, .formulario input, .formulario textarea, .formulario button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.formulario input, .formulario textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none !important;
+    margin-bottom: 14px;
+}
+
+.formulario button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    background-color: #0056b3;
+}
+
+.redes-sociales {
+    padding-top: 37.56px;
+}
+
+.redes-sociales a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.redes-sociales a:hover {
+    background-color: #007bff;
+}
