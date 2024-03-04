@@ -342,61 +342,40 @@ footer {
 
 .redes-sociales a:hover {
     background-color: #007bff;
+} 
+
+
+.dropbtn {
+ background-color: #121212;
+ padding: 2px 5px;
 }
 
-
-/* Estilos para la sección de productos */
-#productos {
-    padding: 50px 0;
-    text-align: center;
-  }
-  
-  #productos h2 {
-    font-size: 2.5em;
-    margin-bottom: 40px;
-  }
-  
-  #productos .contenedor-seccion {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  #productos .producto {
-    flex: 1 1 300px;
-    margin: 20px;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-  
-  #productos .producto img {
-    width: 100%;
-    border-radius: 10px;
-  }
-  
-  #productos .producto h3 {
-    margin-top: 10px;
-    font-size: 1.5em;
-  }
-  
-  #productos .producto p {
-    color: #666;
-  }
-  
-  #productos .producto .btn {
+/* Estilos para el dropdown */
+.dropdown {
+    position: relative;
     display: inline-block;
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
     text-decoration: none;
-    transition: background-color 0.3s;
-  }
-  
-  #productos .producto .btn:hover {
-    background-color: #0056b3;
-  }
-  
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

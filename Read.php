@@ -35,23 +35,23 @@ if ($categoria != 'todas') {
 if ($precio != 'todas') {
     if (strpos($sql, 'WHERE') !== false) {
         if ($precio == 'precio1') {
-            $sql .= " AND precio BETWEEN 0 AND 500";
+            $sql .= " AND precio BETWEEN 0 AND 25";
         } elseif ($precio == 'precio2') {
-            $sql .= " AND precio BETWEEN 501 AND 1000";
+            $sql .= " AND precio BETWEEN 26 AND 50";
         } elseif ($precio == 'precio3') {
-            $sql .= " AND precio BETWEEN 1001 AND 2000";
+            $sql .= " AND precio BETWEEN 51 AND 100";
         } elseif ($precio == 'precio4') {
-            $sql .= " AND precio > 2000";
+            $sql .= " AND precio > 101";
         }
     } else {
         if ($precio == 'precio1') {
-            $sql .= " WHERE precio BETWEEN 0 AND 500";
+            $sql .= " WHERE precio BETWEEN 0 AND 25";
         } elseif ($precio == 'precio2') {
-            $sql .= " WHERE precio BETWEEN 501 AND 1000";
+            $sql .= " WHERE precio BETWEEN 26 AND 50";
         } elseif ($precio == 'precio3') {
-            $sql .= " WHERE precio BETWEEN 1001 AND 2000";
+            $sql .= " WHERE precio BETWEEN 51 AND 100";
         } elseif ($precio == 'precio4') {
-            $sql .= " WHERE precio > 2000";
+            $sql .= " WHERE precio > 101";
         }
     }
 }
@@ -65,7 +65,7 @@ if ($result->num_rows > 0) {
         echo '<img src="img/' . $row["imagen"] . '" alt="' . $row["nombre"] . '">';
         echo '<h3>' . $row["nombre"] . '</h3>';
         echo '<p>' . $row["descripcion"] . '</p>';
-        echo '<p> $' . $row["precio"] . ' MXN</p>';
+        echo '<p> $' . $row["precio"] . ' USD</p>';
         echo '<button>Ver detalles</button>';
         echo '</div>';
     }

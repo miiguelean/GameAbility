@@ -35,7 +35,7 @@ $result_categorias = $conn->query($sql_categorias);
 
 <body>
   <header>
-    <a href="index.html" class="logo-name">
+    <a href="index.php" class="logo-name">
       <h1>GameAbility</h1>
     </a>
     <!-- <img src="img/GameAbility.png" width="250" alt="Logo de GameAbility"> -->
@@ -45,7 +45,20 @@ $result_categorias = $conn->query($sql_categorias);
         <li><a href="#comunidad">Comunidad</a></li>
         <li><a href="#juegos">Juegos Accesibles</a></li>
         <li><a href="#contacto">Contacto</a></li>
-        <li><a href="#">Iniciar Sesion</a></li>
+        <?php
+        session_start();
+        if (isset($_SESSION['username'])) {
+            echo '<li class="dropdown">';
+            echo '<a href="#" class="dropbtn">' . $_SESSION['username'] . '</a>';
+            echo '<div class="dropdown-content">';
+            echo '<a href="logout.php">Cerrar sesión</a>';
+            echo '<a href="perfil.php">Perfil</a>';
+            echo '</div>';
+            echo '</li>';
+        } else {
+            echo '<li><a href="login.php">Iniciar Sesion</a></li>';
+        }
+        ?>
       </ul>
     </nav>
   </header>
@@ -71,10 +84,10 @@ $result_categorias = $conn->query($sql_categorias);
         <label for="precio">Precio:</label>
         <select name="precio" id="precio">
           <option value="todas">Todas</option>
-          <option value="precio1">Hasta $500</option>
-          <option value="precio2">$500 a $1000</option>
-          <option value="precio3">$1000 a $2000</option>
-          <option value="precio4">$2000 y Mas</option>
+          <option value="precio1">Hasta $25</option>
+          <option value="precio2">$25 a $50</option>
+          <option value="precio3">$50 a $100</option>
+          <option value="precio4">$100 y Mas</option>
         </select>
         <input type="submit" value="Filtrar">
       </form>
