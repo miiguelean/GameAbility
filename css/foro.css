@@ -176,3 +176,43 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
+.pregunta {
+  margin: 0 auto;
+  margin-top: 2%;
+  width: 70%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pregunta p {
+  width: 80%;
+  font-size: 1.2em;
+}
+
+.respuestas {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.respuestas h3 {
+  font-size: 1.4em;
+}
+
+.respuestas .respuesta {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
+a:visited {
+  color: #fff;
+}
