@@ -92,7 +92,7 @@ $conn->close();
         <p>Publicado por: <?php echo $username_pregunta; ?> el <?php echo $fecha; ?></p>
         <?php
         echo "<div class='responder'>";
-        echo "<a href='responder_pregunta.php?id=" . $id_pregunta . "'>Responder a esta pregunta</a>";
+        echo "<a class='btn-responder-pregunta' href='responder_pregunta.php?id=" . $id_pregunta . "'>Responder a esta pregunta</a>";
         echo "</div>";
         ?>
     </div>

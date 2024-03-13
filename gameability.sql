@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-03-2024 a las 23:01:19
+-- Tiempo de generación: 13-03-2024 a las 21:11:42
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -42,6 +42,33 @@ INSERT INTO `categorias` (`id`, `nombre`) VALUES
 (3, 'Teclado Membrana'),
 (4, 'Audifonos'),
 (5, 'Controles Personalizados');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `eventos`
+--
+
+CREATE TABLE `eventos` (
+  `id` int(11) NOT NULL,
+  `titulo` varchar(255) NOT NULL,
+  `fecha` date NOT NULL,
+  `descripcion` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `eventos`
+--
+
+INSERT INTO `eventos` (`id`, `titulo`, `fecha`, `descripcion`) VALUES
+(1, 'Conferencia de Desarrollo de Videojuegos', '2024-05-15', 'Únete a nuestra conferencia sobre el desarrollo de videojuegos y aprende de expertos de la industria.'),
+(2, 'Charla sobre Accesibilidad en los Videojuegos', '2024-06-20', 'Participa en nuestra charla sobre accesibilidad en los videojuegos y descubre cómo hacerlos más inclusivos.'),
+(3, 'Evento de LAN Party', '2024-07-10', 'Ven a nuestra LAN Party y disfruta de una noche llena de juegos en red con otros entusiastas.'),
+(4, 'Feria de Videojuegos Indie', '2024-08-05', 'Explora la creatividad de los desarrolladores independientes en nuestra feria de videojuegos indie.'),
+(5, 'Presentación de Nuevos Juegos', '2024-09-12', 'Descubre los próximos lanzamientos en nuestra presentación de nuevos juegos.'),
+(6, 'Taller de Creación de Mods', '2024-10-18', 'Aprende a crear mods para tus juegos favoritos en nuestro taller especializado.'),
+(7, 'Evento de Presentación de Cyberpunk 2077', '2024-05-15', 'Ven y disfruta del evento de presentación de Cyberpunk 2077 con demostraciones exclusivas y sorpresas.'),
+(8, 'Torneo de League of Legends en línea', '2024-07-20', 'Participa en nuestro torneo en línea de League of Legends y demuestra tu habilidad en este popular juego.');
 
 -- --------------------------------------------------------
 
@@ -159,7 +186,46 @@ CREATE TABLE `respuestas` (
 --
 
 INSERT INTO `respuestas` (`id`, `id_pregunta`, `id_usuario`, `contenido`, `fecha`) VALUES
-(1, 3, 1, 'Sí, existen varios programas de terceros recomendados para configurar controles en PC. Uno de los más populares es JoyToKey, que te permite asignar teclas del teclado y clics del ratón a los botones y ejes de tu control. Para usarlo, simplemente descarga e instala JoyToKey, luego sigue las instrucciones para asignar las funciones que desees a tu control. Otro software recomendado es Xpadder, que ofrece funcionalidades similares. Ambos programas son fáciles de usar y pueden ayudarte a configurar tu control [nombre del control] en tu PC según tus preferencias.\r\n\r\n', '2024-03-04 19:46:09');
+(1, 3, 1, 'Sí, existen varios programas de terceros recomendados para configurar controles en PC. Uno de los más populares es JoyToKey, que te permite asignar teclas del teclado y clics del ratón a los botones y ejes de tu control. Para usarlo, simplemente descarga e instala JoyToKey, luego sigue las instrucciones para asignar las funciones que desees a tu control. Otro software recomendado es Xpadder, que ofrece funcionalidades similares. Ambos programas son fáciles de usar y pueden ayudarte a configurar tu control [nombre del control] en tu PC según tus preferencias.\r\n\r\n', '2024-03-04 19:46:09'),
+(3, 6, 4, 'me parecen bien pero pudieron estar mejor', '2024-03-12 19:43:11'),
+(4, 4, 4, 'JSJAJSJASJ no sabes como??\r\nes el jefe mas facil', '2024-03-12 19:46:10'),
+(5, 4, 4, 'Solo lanza un hacha', '2024-03-12 19:48:38'),
+(6, 4, 4, 'nose', '2024-03-12 19:49:09'),
+(7, 4, 4, 'Lanza un hacha al ojo izquierdo', '2024-03-12 19:49:44'),
+(8, 4, 4, 'Lanza el hacha', '2024-03-12 19:50:33'),
+(9, 6, 4, 'algo fea la actualizacion', '2024-03-12 19:50:57'),
+(10, 6, 4, 'muy buenaaaa', '2024-03-12 19:51:35'),
+(11, 6, 4, 'muy mala', '2024-03-12 19:51:47'),
+(12, 6, 4, 'mala', '2024-03-12 19:52:23'),
+(13, 1, 1, 'Enciende tu PS5 y asegúrate de que el control Access esté conectado correctamente a través de USB o Bluetooth.\r\nEn el menú de inicio de la PS5, ve a \"Configuración\" y luego selecciona \"Dispositivos\".\r\nEn la sección \"Controladores y dispositivos de entrada\", selecciona \"Controladores\" y luego \"Asignación de botones\".\r\nSelecciona tu control Access de la lista de dispositivos conectados.\r\nAhora, sigue las instrucciones en pantalla para asignar los botones según tus preferencias en Fall Guys.\r\nUna vez que hayas configurado los botones, guarda la configuración y sal de la configuración de controladores.\r\nAhora tu control Access de PS5 debería estar configurado correctamente para jugar a Fall Guys. ¡Buena suerte!', '2024-03-13 18:05:35');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `torneos`
+--
+
+CREATE TABLE `torneos` (
+  `id` int(11) NOT NULL,
+  `titulo` varchar(255) NOT NULL,
+  `fecha` date NOT NULL,
+  `descripcion` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `torneos`
+--
+
+INSERT INTO `torneos` (`id`, `titulo`, `fecha`, `descripcion`) VALUES
+(1, 'Torneo de League of Legends', '2024-05-15', 'Únete a nuestro torneo de League of Legends y demuestra tus habilidades en este popular MOBA.'),
+(2, 'Competencia de FIFA 25', '2024-06-20', 'Demuestra tus habilidades en la cancha virtual con nuestra competencia de FIFA 25.'),
+(3, 'Concurso de Super Smash Bros Ultimate', '2024-07-10', 'Participa en nuestro concurso de Super Smash Bros Ultimate y lucha contra otros jugadores para convertirte en el campeón.'),
+(4, 'Competencia de Rocket League', '2024-08-05', 'Demuestra tus habilidades automovilísticas en nuestro torneo de Rocket League.'),
+(5, 'Torneo de Fortnite', '2024-09-12', 'Enfréntate a otros jugadores en nuestro torneo de Fortnite y gana fabulosos premios.'),
+(6, 'Torneo de Call of Duty: Warzone', '2024-10-18', 'Enfréntate a otros soldados en nuestro torneo de Call of Duty: Warzone y demuestra quién es el mejor.'),
+(7, 'Torneo de FIFA 24', '2024-06-10', 'Participa en nuestro torneo de FIFA 24 y compite contra los mejores jugadores para ganar fabulosos premios.'),
+(8, 'Torneo de Call of Duty: Warzone', '2024-08-05', 'Demuestra tu habilidad en Call of Duty: Warzone y gana increíbles premios en nuestro torneo en línea.'),
+(9, 'Torneo de Fortnite Battle Royale', '2024-09-15', 'Participa en nuestro torneo de Fortnite Battle Royale y compite por premios épicos.');
 
 -- --------------------------------------------------------
 
@@ -184,7 +250,8 @@ INSERT INTO `usuarios` (`id`, `nombre`, `username`, `email`, `pwd`, `fecha_nacim
 (1, 'Miguel Tienda', 'TJ_in_SickoMode', 'miguel@gmail.com', '123', '2000-05-01'),
 (2, '', 'joelinjr04', 'joel@gmail.com', '1234', '2003-06-04'),
 (3, '', 'Elvis_Tek', 'Elvis_Tek@gmail.com', '123', '2000-07-14'),
-(4, '', 'debanhisiuu', 'debanhi@gmail.com', '123', '1995-11-10');
+(4, '', 'debanhisiuu', 'debanhi@gmail.com', '123', '1995-11-10'),
+(5, '', 'Ye', 'ye@gmail.com', '123', '1999-06-25');
 
 --
 -- Índices para tablas volcadas
@@ -194,6 +261,12 @@ INSERT INTO `usuarios` (`id`, `nombre`, `username`, `email`, `pwd`, `fecha_nacim
 -- Indices de la tabla `categorias`
 --
 ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `eventos`
+--
+ALTER TABLE `eventos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -226,6 +299,12 @@ ALTER TABLE `respuestas`
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
+-- Indices de la tabla `torneos`
+--
+ALTER TABLE `torneos`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -240,6 +319,12 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `categorias`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `eventos`
+--
+ALTER TABLE `eventos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `marcas`
@@ -263,13 +348,19 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT de la tabla `torneos`
+--
+ALTER TABLE `torneos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas

@@ -6,11 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GameAbility - Tienda de Productos Gamers Inclusivos</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/animacion.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous" />
   <script src="https://kit.fontawesome.com/cc355c966a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+  <div id="loader">
+    <img src="img/loading.gif" alt="Gif de cargando">
+  </div>
   <header>
     <h1>GameAbility</h1>
     <nav>
@@ -22,15 +26,15 @@
         <?php
         session_start();
         if (isset($_SESSION['username'])) {
-            echo '<li class="dropdown">';
-            echo '<a href="#" class="dropbtn">' . $_SESSION['username'] . '</a>';
-            echo '<div class="dropdown-content">';
-            echo '<a href="logout.php">Cerrar sesión</a>';
-            echo '<a href="perfil.php">Perfil</a>';
-            echo '</div>';
-            echo '</li>';
+          echo '<li class="dropdown">';
+          echo '<a href="#" class="dropbtn">' . $_SESSION['username'] . '</a>';
+          echo '<div class="dropdown-content">';
+          echo '<a href="logout.php">Cerrar sesión</a>';
+          echo '<a href="perfil.php">Perfil</a>';
+          echo '</div>';
+          echo '</li>';
         } else {
-            echo '<li><a href="login.php">Iniciar Sesion</a></li>';
+          echo '<li><a href="login.php">Iniciar Sesion</a></li>';
         }
         ?>
       </ul>
@@ -106,14 +110,13 @@
           Participa en nuestros eventos y torneos inclusivos diseñados para
           gamers con discapacidad.
         </p>
-        <a href="#" class="btn">Ver Próximos Eventos</a>
+        <a href="eventos_torneos.php" class="btn">Ver Próximos Eventos</a>
       </div>
       <div class="historias">
         <img src="img/historias.jpg" alt="Dos gamers dandose un saludo con el puño" />
         <h3>Historias Inspiradoras</h3>
         <p>
-          Lee las historias y testimonios de gamers con discapacidad que han
-          superado desafíos y logrado éxito.
+        Explora las experiencias de gamers con discapacidad que han superado desafíos para alcanzar el éxito.
         </p>
         <a href="#" class="btn">Leer Más Historias</a>
       </div>
@@ -192,6 +195,15 @@
   </footer>
 
   <script src="js/script.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      const loader = document.getElementById('loader');
+      loader.classList.add('fadeOut');
+      setTimeout(function () {
+        loader.style.display = 'none';
+      }, 3000);
+    });
+  </script>
 </body>
 
 </html>

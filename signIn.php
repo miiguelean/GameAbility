@@ -21,10 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO usuarios (username, pwd, email, fecha_nacimiento) VALUES ('$username', '$pwd', '$email', '$fecha_nacimiento')";
 
     if ($conn->query($sql) === TRUE) {
-        // Usuario registrado correctamente, iniciar sesión automáticamente
-        session_start();
-        $_SESSION['username'] = $username;
-        header("Location: index.php");
+        // Usuario registrado correctamente
+        // Redirigir al usuario a la página de inicio de sesión
+        header("Location: login.php");
         exit();
     } else {
         echo "Error al registrar el usuario: " . $conn->error;

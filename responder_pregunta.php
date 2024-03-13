@@ -1,23 +1,23 @@
 <?php
 session_start();
 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "gameability";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
+}
+
 if (!isset($_SESSION['id_usuario'])) {
     header("Location: login.php");
     exit();
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "gameability";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Error de conexión: " . $conn->connect_error);
-    }
-
     $id_pregunta = $_POST['id_pregunta'];
     $contenido = $_POST['contenido'];
     $id_usuario = $_SESSION['id_usuario'];
@@ -33,9 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
-    $conn->close();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="css/foro.css">
 </head>
 
-<body>
+<body style="display: flex; min-height: 100vh; flex-direction: column;">
     <header>
         <h1>GameAbility</h1>
         <nav>
@@ -75,6 +74,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="form-container">
         <h2>Responder a una pregunta</h2>
+        <?php
+        // Obtener el ID de la pregunta de la URL
+        if (isset($_GET['id'])) {
+            $id_pregunta = $_GET['id'];
+
+            // Consultar la pregunta
+            $sql_pregunta = "SELECT * FROM preguntas WHERE id = $id_pregunta";
+            $result_pregunta = $conn->query($sql_pregunta);
+
+            if ($result_pregunta->num_rows > 0) {
+                $row_pregunta = $result_pregunta->fetch_assoc();
+                $titulo_pregunta = $row_pregunta['titulo'];
+                $contenido_pregunta = $row_pregunta['contenido'];
+
+                // Mostrar el título de la pregunta
+                echo "<p class='mostrar-pregunta-Enrespuesta'>$titulo_pregunta</p>";
+                echo "<p class='mostrar-contenido-Enrespuesta'>$contenido_pregunta</p>";
+            } else {
+                echo "No se encontró la pregunta.";
+            }
+        } else {
+            echo "No se especificó una pregunta.";
+        }
+        ?>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <input type="hidden" name="id_pregunta" value="<?php echo $_GET['id']; ?>">
             <label for="contenido">Respuesta:</label>
@@ -83,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
 
-    <footer>
+    <footer style="margin-top: auto;">
         <p>&copy; 2024 Foro de Discusión. Todos los derechos reservados.</p>
     </footer>
 </body>
